@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "1059231977491",
+    "firebase_url": "https://real-post-app-firebase-default-rtdb.firebaseio.com",
+    "project_id": "real-post-app-firebase",
+    "storage_bucket": "real-post-app-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059231977491:android:69036dcc4affd3d2a32fe6",
+        "android_client_info": {
+          "package_name": "com.example.firebase_connection_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4N2SBc-LuJsliUMyyi4HQeV6tEbz-NME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059231977491:android:a968f053e3e1b022a32fe6",
+        "android_client_info": {
+          "package_name": "com.example.vocabulary_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4N2SBc-LuJsliUMyyi4HQeV6tEbz-NME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059231977491:android:92b726871b6b3eeca32fe6",
+        "android_client_info": {
+          "package_name": "com.jurakuziyev.post_application_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4N2SBc-LuJsliUMyyi4HQeV6tEbz-NME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059231977491:android:0f5bbd37231c83b1a32fe6",
+        "android_client_info": {
+          "package_name": "com.jurakuziyev.post_comments_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4N2SBc-LuJsliUMyyi4HQeV6tEbz-NME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
