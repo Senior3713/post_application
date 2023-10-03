@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:post_comments_with_firebase/blocs/auth/auth_bloc.dart';
 import 'package:post_comments_with_firebase/blocs/main/main_bloc.dart';
 import 'package:post_comments_with_firebase/blocs/post/post_bloc.dart';
@@ -12,6 +11,10 @@ import 'package:post_comments_with_firebase/services/rc_service.dart';
 import 'package:post_comments_with_firebase/services/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:post_comments_with_firebase/views/app_bar.dart';
+import 'package:post_comments_with_firebase/views/bottom_navigation_bar.dart';
+import 'package:post_comments_with_firebase/views/drawer.dart';
+import 'package:post_comments_with_firebase/views/floating_action_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -157,30 +160,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            BlocBuilder<AuthBloc, AuthState>(
-              builder: (context, state) {
-                final String name = state is GetUserSuccess
-                    ? state.user.displayName!
-                    : "accountName";
-                final String email =
-                state is GetUserSuccess ? state.user.email! : "accountName";
-
-                return UserAccountsDrawerHeader(
-                  accountName: Text(name),
-                  accountEmail: Text(email),
-                );
-              },
-            ),
-            ListTile(
-              onTap: () => showWarningDialog(context),
-              title: const Text(I18N.deleteAccount),
-            )
-          ],
-        ),
-      ),
+      // ignore: void_checks
+      drawer: MyDrawer(showWarningDialog: showWarningDialog),
       body: MultiBlocListener(
         listeners: [
           BlocListener<AuthBloc, AuthState>(
@@ -270,27 +251,8 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DetailPage()));
-        },
-        child: const Icon(Icons.create_outlined),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {
-          if(index == 0) {
-            type = SearchType.all;
-            context.read<MainBloc>().add(const AllPublicPostEvent());
-          } else {
-            type = SearchType.me;
-            context.read<MainBloc>().add(const MyPostEvent());
-          }
-        },
-        items: [
-          BottomNavigationBarItem(icon: const Icon(Icons.public), label: language["all"]),
-          BottomNavigationBarItem(icon: const Icon(Icons.person), label: language["me"]),
-        ],
-      ),
+      floatingActionButton: const MyFloatingButton(),
+      bottomNavigationBar: MyNavigationBar(type: type, language: language),
     );
   }
 }
